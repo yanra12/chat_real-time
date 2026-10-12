@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Lucu 🌸</title>
+    <!-- Menggunakan font Nunito yang bulat dan lucu -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="chat-wrapper">
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="user-profile">
+                <img src="" alt="Avatar" id="my-avatar" class="avatar">
+                <div class="user-details">
+                    <h2 id="my-name">Pengguna</h2>
+                    <span id="typing-indicator">✨ Online</span>
+                </div>
+            </div>
+            <button id="clear-btn" title="Bersihkan Layar"><i class="fas fa-broom"></i></button>
+        </header>
+
+        <!-- Area Pesan -->
+        <main class="chat-box" id="chat-box">
+            <!-- Pesan muncul di sini -->
+        </main>
+
+        <!-- Area Input -->
+        <footer class="chat-input-area">
+            <input type="text" id="message-input" placeholder="Ketik pesan manismu..." autocomplete="off" autofocus>
+            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </footer>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

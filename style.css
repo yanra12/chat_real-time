@@ -1,0 +1,204 @@
+/* style.css - Tema Lucu & Pastel */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif; /* Font membulat */
+}
+
+body {
+    /* Background gradien pastel pink/ungu ceria */
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-wrapper {
+    width: 100%;
+    max-width: 420px; /* Agak lebih ramping seperti layar HP modern */
+    height: 90vh;
+    background-color: #fff9fa;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 35px rgba(255, 154, 158, 0.4);
+    border-radius: 35px; /* Jauh lebih bulat */
+    border: 6px solid #ffffff; /* Bingkai putih tebal */
+    overflow: hidden;
+}
+
+/* Header */
+.chat-header {
+    background-color: #ffffff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px dashed #ffc2d1; /* Garis putus-putus manis */
+    z-index: 10;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 20px; /* Kotak melengkung (squircle) */
+    background-color: #ffe5ec;
+    padding: 4px;
+    box-shadow: 0 4px 10px rgba(255, 184, 209, 0.4);
+}
+
+.user-details h2 {
+    font-size: 18px;
+    color: #ff6b81; /* Pink tua */
+    font-weight: 800;
+}
+
+#typing-indicator {
+    font-size: 13px;
+    color: #7bed9f; /* Hijau mint terang */
+    font-weight: 700;
+}
+
+#clear-btn {
+    background: none;
+    border: none;
+    color: #ffb8d1;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+#clear-btn:hover { 
+    color: #ff6b81; 
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Kotak Chat Utama dengan Polkadot */
+.chat-box {
+    flex: 1;
+    padding: 25px 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    /* Background Polkadot Lembut */
+    background-color: #fff9fa;
+    background-image: radial-gradient(#ffc2d1 2px, transparent 2px);
+    background-size: 25px 25px;
+}
+
+/* Styling Balon Pesan */
+.message {
+    max-width: 78%;
+    display: flex;
+    flex-direction: column;
+    animation: bounceIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.bubble {
+    padding: 12px 18px;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+/* Pesan Saya (Kanan) - Warna Pink */
+.message.me { align-self: flex-end; }
+.message.me .bubble {
+    background-color: #ffb8d1;
+    color: #ffffff;
+    border-radius: 22px 22px 5px 22px; /* Melengkung dengan ekor di kanan bawah */
+    box-shadow: 0 5px 15px rgba(255, 184, 209, 0.5);
+}
+
+/* Pesan Orang Lain (Kiri) - Warna Putih */
+.message.other { align-self: flex-start; }
+.message.other .bubble {
+    background-color: #ffffff;
+    color: #ff6b81;
+    border-radius: 22px 22px 22px 5px; /* Melengkung dengan ekor di kiri bawah */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    border: 2px solid #ffe5ec;
+}
+
+.sender-name {
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffa502; /* Oranye lucu untuk nama teman */
+    margin-bottom: 5px;
+    display: block;
+}
+
+.timestamp {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 6px;
+    text-align: right;
+    display: block;
+    font-weight: 700;
+}
+.message.other .timestamp { color: #ffb8d1; } /* Warna jam untuk orang lain */
+
+/* Area Input Bawah */
+.chat-input-area {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-top: 3px dashed #ffc2d1;
+}
+
+#message-input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 2px solid #ffe5ec;
+    border-radius: 30px;
+    font-size: 15px;
+    outline: none;
+    background-color: #fff9fa;
+    color: #ff6b81;
+    font-weight: 600;
+    transition: border 0.3s;
+}
+#message-input::placeholder { color: #ffb8d1; }
+#message-input:focus { border-color: #ff6b81; }
+
+#send-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
+    transition: transform 0.2s;
+}
+#send-btn:hover { transform: scale(1.1); background-color: #ff4757; }
+#send-btn:active { transform: scale(0.9); }
+
+/* Custom Scrollbar supaya lucu */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ffb8d1; border-radius: 10px; }
+
+/* Animasi Muncul Memantul (Bouncy) */
+@keyframes bounceIn {
+    0% { opacity: 0; transform: translateY(20px) scale(0.8); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Responsif Mobile */
+@media (max-width: 600px) {
+    .chat-wrapper { height: 100vh; border-radius: 0; border: none; max-width: 100%; }
+}
